@@ -34,6 +34,12 @@
 $ npm install
 ```
 
+### Load example data
+Execute in the Heroku Console of the dyno:
+```bash
+$ psql $DATABASE_URL -f sql/data.sql
+```
+
 ## Running the app
 
 ```bash
