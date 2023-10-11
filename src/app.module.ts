@@ -41,7 +41,6 @@ import { AlbumMusicianModule } from './albummusician/albummusician.module';
         rejectUnauthorized: false
       },
       entities: [Album, CollectorAlbum, Band, Collector, Comment, Musician, Performer, PerformerPrize, Prize, Track,],
-      dropSchema: true,
       synchronize: true,
       keepConnectionAlive: true,
       migrations: [__dirname + '/migration/**/*{.ts,.js}'],
