@@ -18,11 +18,11 @@ export class BandService {
     ) { }
 
     async findAll(): Promise<BandDTO[]> {
-        return await this.bandRepository.find({ relations: ["albums", "musicians", "performerPrizes"] });
+        return await this.bandRepository.find({ relations: ["albums", "musicians", "collectors", "performerPrizes"] });
     }
 
     async findOne(id: number): Promise<BandDTO> {
-        const band = await this.bandRepository.findOne(id, { relations: ["albums", "musicians", "performerPrizes"] });
+        const band = await this.bandRepository.findOne(id, { relations: ["albums", "musicians", "collectors", "performerPrizes"] });
         if (!band)
             throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
         return band;
