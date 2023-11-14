@@ -48,7 +48,11 @@ export class CollectorPerformerService {
         if (!performer)
             throw new BusinessLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND)
 
-        collector.favoritePerformers.filter(e => e.id !== performerId)
+        const updatedFavoritePerformer = collector.favoritePerformers.filter(e => {
+            return e.id != performerId
+        });
+
+        collector.favoritePerformers = updatedFavoritePerformer;
 
         return await this.collectorRepository.save(collector);
     }
